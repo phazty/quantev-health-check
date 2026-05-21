@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 24 90% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 25% 27%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 210 40% 94%;
+    --muted-foreground: 215 20% 45%;
+    --accent: 210 40% 94%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 24 90% 48%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 47% 9%;
+    --foreground: 210 40% 96%;
+    --card: 217 33% 13%;
+    --card-foreground: 210 40% 96%;
+    --popover: 217 33% 13%;
+    --popover-foreground: 210 40% 96%;
+    --primary: 24 90% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 215 25% 22%;
+    --secondary-foreground: 210 40% 96%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 55%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 96%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 24 90% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    @apply h-screen w-screen overflow-hidden;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--muted));
+    border-radius: 2px;
+  }
+
+  .operational-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .nav-item-active {
+    @apply bg-orange/10 text-white border-l-2 border-orange;
+  }
+
+  .nav-item-inactive {
+    @apply text-slate-400 border-l-2 border-transparent hover:bg-navy-lighter/40 hover:text-slate-200;
+  }
+}

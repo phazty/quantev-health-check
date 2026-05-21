@@ -1,0 +1,118 @@
+import type { User } from "@/types/user";
+
+function daysAgo(n: number): Date {
+  return new Date(Date.now() - n * 24 * 60 * 60 * 1000);
+}
+
+function hoursAgo(n: number): Date {
+  return new Date(Date.now() - n * 60 * 60 * 1000);
+}
+
+export const users: User[] = [
+  {
+    id: "usr-001",
+    name: "Emily Watson",
+    email: "e.watson@quantev.io",
+    role: "super_admin",
+    status: "active",
+    avatarInitials: "EW",
+    avatarColor: "#EA580C",
+    department: "Platform Engineering",
+    lastLoginAt: hoursAgo(1),
+    createdAt: daysAgo(365),
+    assignedSites: ["site-atx", "site-sfo", "site-ord", "site-mia", "site-den", "site-sea"],
+  },
+  {
+    id: "usr-002",
+    name: "Marcus Chen",
+    email: "m.chen@quantev.io",
+    role: "administrator",
+    status: "active",
+    avatarInitials: "MC",
+    avatarColor: "#8B5CF6",
+    department: "Network Operations",
+    lastLoginAt: hoursAgo(0.5),
+    createdAt: daysAgo(280),
+    assignedSites: ["site-atx", "site-den"],
+  },
+  {
+    id: "usr-003",
+    name: "Sarah Mitchell",
+    email: "s.mitchell@quantev.io",
+    role: "operator",
+    status: "active",
+    avatarInitials: "SM",
+    avatarColor: "#3B82F6",
+    department: "Field Operations",
+    lastLoginAt: hoursAgo(2),
+    createdAt: daysAgo(180),
+    assignedSites: ["site-sfo"],
+  },
+  {
+    id: "usr-004",
+    name: "James Rodriguez",
+    email: "j.rodriguez@quantev.io",
+    role: "operator",
+    status: "active",
+    avatarInitials: "JR",
+    avatarColor: "#10B981",
+    department: "Field Operations",
+    lastLoginAt: hoursAgo(4),
+    createdAt: daysAgo(210),
+    assignedSites: ["site-ord"],
+  },
+  {
+    id: "usr-005",
+    name: "Tyler Brooks",
+    email: "t.brooks@quantev.io",
+    role: "operator",
+    status: "active",
+    avatarInitials: "TB",
+    avatarColor: "#F59E0B",
+    department: "Field Operations",
+    lastLoginAt: hoursAgo(6),
+    createdAt: daysAgo(90),
+    assignedSites: ["site-mia"],
+  },
+  {
+    id: "usr-006",
+    name: "Priya Patel",
+    email: "p.patel@quantev.io",
+    role: "operator",
+    status: "active",
+    avatarInitials: "PP",
+    avatarColor: "#EC4899",
+    department: "Field Operations",
+    lastLoginAt: hoursAgo(1),
+    createdAt: daysAgo(150),
+    assignedSites: ["site-den"],
+  },
+  {
+    id: "usr-007",
+    name: "David Nguyen",
+    email: "d.nguyen@quantev.io",
+    role: "operator",
+    status: "active",
+    avatarInitials: "DN",
+    avatarColor: "#06B6D4",
+    department: "Field Operations",
+    lastLoginAt: hoursAgo(3),
+    createdAt: daysAgo(120),
+    assignedSites: ["site-sea"],
+  },
+  {
+    id: "usr-008",
+    name: "Alex Kim",
+    email: "a.kim@quantev.io",
+    role: "auditor",
+    status: "active",
+    avatarInitials: "AK",
+    avatarColor: "#64748B",
+    department: "Compliance & Audit",
+    lastLoginAt: daysAgo(2),
+    createdAt: daysAgo(60),
+    assignedSites: ["site-atx", "site-sfo", "site-ord", "site-mia", "site-den", "site-sea"],
+  },
+];
+
+export const currentUser = users[1]; // Marcus Chen — logged-in operator
