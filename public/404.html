@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Quantev Health Check</title>
+    <script>
+      // GitHub Pages SPA redirect — preserves the path on hard refresh / direct link
+      var path = window.location.pathname.replace(/\/quantev-health-check/, "");
+      sessionStorage.setItem("redirect", path || "/");
+      window.location.replace("/quantev-health-check/");
+    </script>
+  </head>
+  <body></body>
+</html>

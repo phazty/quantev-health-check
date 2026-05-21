@@ -11,6 +11,16 @@
       rel="stylesheet"
     />
     <script>
+      // GitHub Pages SPA: consume redirect stored by 404.html
+      (function () {
+        var redirect = sessionStorage.getItem("redirect");
+        if (redirect && redirect !== "/") {
+          sessionStorage.removeItem("redirect");
+          window.history.replaceState(null, "", redirect);
+        }
+      })();
+    </script>
+    <script>
       (function () {
         try {
           const stored = localStorage.getItem("quantev-ui-state");
